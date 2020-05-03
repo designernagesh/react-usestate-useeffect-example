@@ -40,7 +40,7 @@ function App(){
       setPosts(res.data)
     })
   }, [name]) */
-  
+
 
   /* Using Axios Async and Await Method */
   useEffect( () => {
@@ -50,6 +50,7 @@ function App(){
   
   const data = async () => {
     const res = await axios.get("https://jsonplaceholder.typicode.com/posts")
+                      .catch(error => console.log(error))
     setPosts(res.data)
   }
 
